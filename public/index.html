@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
+<head>
+  <title>Drivy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="form">
+  <div class="tab-content">
+    <div id="signup">
+      <h1>Drivy</h1>
+
+    <div class="top-row" id="car">
+        <div class="field-wrap">
+          <label>
+            Car model
+          </label>
+          <input type="text" required autocomplete="off" />
+        </div>
+      <div class="field-wrap">
+        <label>
+          Price by day
+        </label>
+        <input type="text" required autocomplete="off" />
+      </div>
+      <div class="field-wrap">
+        <label class="req">
+          Price by km<span class="req"></span>
+        </label>
+        <input type="text" required autocomplete="off" />
+      </div>
     </div>
+
     <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
+      <div class="field-wrap">
+        <input class="req" type="date" placeholder="Rental begin date">
+      </div>
+
+      <div class="field-wrap">
+        <input class="end"  type="date" placeholder="Rental begin date">
+      </div>
+
       <input class="distance" type="number" placeholder="Distance in km"/>
+
       <input class="option" type="checkbox" placeholder="Deductible option"/>
     </div>
-    <button id="compute">Compute</button>
+    <button class="button button-block" id="compute">Compute</button>
     <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
+</div>
+<script id="template" type="x-tmpl-mustache">
       {{#actors}}
         <div class="actor">
           <span>{{who}}</span>
@@ -26,8 +56,8 @@
         </div>
       {{/actors}}
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
-  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+<script src="drivy.js"></script>
+<script src="index.js"></script>
+</body>
 </html>
